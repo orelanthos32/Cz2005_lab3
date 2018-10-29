@@ -1,0 +1,75 @@
+#include "copyright.h"
+#include "tlb.h"
+#include "syscall.h"
+#include "machine.h"
+#include "thread.h"
+#include "system.h"
+#include "utility.h"
+
+//----------------------------------------------------------------------
+// UpdateTLB
+//      Called when exception is raised and a page isn't in the TLB.
+// Figures out what to do (get from IPT, or pageoutpagein) and does it.
+//----------------------------------------------------------------------
+
+void UpdateTLB(int possible_badVAddr)
+{
+  int badVAddr;
+  unsigned int vpn;
+  int phyPage;
+
+  if(possible_badVAddr) // get the bad address from the correct location
+    badVAddr=possible_badVAddr; // fault in kernel
+  else
+    badVAddr=machine->registers[BadVAddrReg]; // fault in userprog
+  
+  vpn=(unsigned)badVAddr/PageSize;
+  
+  if((phyPage=VpnToPhyPage(vpn))!=-1) {
+    InsertToTLB(vpn, phyPage);
+  } else {
+    if(vpn>=currentThread->space->numPages && !GetMmap(vpn))
+      machine->RaiseException(AddressErrorException, badVAddr);
+    else
+      InsertToTLB(vpn, PageOutPageIn(vpn));
+  }
+}
+
+//----------------------------------------------------------------------
+// VpnToPhyPage
+//      Gets a phyPage for a vpn, if exists in ipt.
+//----------------------------------------------------------------------
+
+int VpnToPhyPage(int vpn)
+{
+  	int phyPage = -1;
+  for(int i = 0; i < NumPhysPages; i++) {
+    if(memoryTable[i].valid && memoryTable[i].pid == currentThread->pid && memoryTable[i].vPage == vpn) {
+      printf("--- printf: VpnToPhyPage found=%i\n", i);
+      //DEBUG('p', "--- DEBUG: VpnToPhyPage found=%d\n", i);
+      
+      phyPage = i;
+      break;
+    }
+  }
+	return phyPage;
+}
+
+//----------------------------------------------------------------------
+// InsertToTLB
+//      Put a vpn/phyPage combination into the TLB. If TLB is full, use FIFO 
+//    replacement
+//----------------------------------------------------------------------
+
+void InsertToTLB(int vpn, int phyPage)
+{
+  int i = 0; //entry in the TLB
+  
+  //your code to find an empty in TLB or to replace the oldest entry if TLB is full
+	static int FIFOPointer = 0;
+// look for empty
+	for(i = 0; i<TLBSize; i++){
+		if (!machine -> tlb[i].valid){
+			break;
+			}
+	}
