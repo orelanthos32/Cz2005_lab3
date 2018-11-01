@@ -45,13 +45,13 @@ int VpnToPhyPage(int vpn)
   //your code here to get a physical frame for page vpn
   //you can refer to PageOutPageIn(int vpn) to see how an entry was created in ipt
   printf("--- printf: VpnToPhyPage(vpn=%i)\n", vpn);
-  //DEBUG('p', "--- DEBUG: VpnToPhyPage(vpn=%d)\n", vpn);
+
   
   int phyPage = -1;
   for(int i = 0; i < NumPhysPages; i++) {
     if(memoryTable[i].valid && memoryTable[i].pid == currentThread->pid && memoryTable[i].vPage == vpn) {
       printf("--- printf: VpnToPhyPage found=%i\n", i);
-      //DEBUG('p', "--- DEBUG: VpnToPhyPage found=%d\n", i);
+
       
       phyPage = i;
       break;
@@ -59,7 +59,13 @@ int VpnToPhyPage(int vpn)
   }
   
   printf("--- printf: phyPage=%i\n", phyPage);
-  //DEBUG('p', "--- DEBUG: phyPage=%d\n", phyPage);
+ //print IPT table//
+  printf("\n"); printf("--- [IPT] ---\n"); for(int x = 0; x < NumPhysPages; x++) { printf("IPT[%i]: pid=%i, vpn=%i, last used=%i, valid=%i\n", x, memoryTable[x].pid, memoryTable[x].vPage, memoryTable[x].lastUsed, memoryTable[x].valid); } printf("--- [IPT] ---\n");
+
+  //print TLB table//
+  printf("\n--- [TLB] ---\n"); for(int x = 0; x < TLBSize; x++) { printf("TLB[%i]: vpn=%i, phy=%i, valid=%i\n", x, machine->tlb[x].virtualPage, machine->tlb[x].physicalPage, machine->tlb[x].valid); } printf("--- [TLB] ---\n"); printf("\n");
+
+
   
   return phyPage;
 }
@@ -74,12 +80,7 @@ void InsertToTLB(int vpn, int phyPage)
 {
   int i = 0; //entry in the TLB
     static int FIFOPointer = 0;
- //print IPT table//
-  printf("\n"); printf("--- [IPT] ---\n"); for(int x = 0; x < NumPhysPages; x++) { printf("IPT[%i]: pid=%i, vpn=%i, last used=%i, valid=%i\n", x, memoryTable[x].pid, memoryTable[x].vPage, memoryTable[x].lastUsed, memoryTable[x].valid); } printf("--- [IPT] ---\n");
-  //print IPT table//
-  //print TLB table//
-  printf("\n--- [TLB] ---\n"); for(int x = 0; x < TLBSize; x++) { printf("TLB[%i]: vpn=%i, phy=%i, valid=%i\n", x, machine->tlb[x].virtualPage, machine->tlb[x].physicalPage, machine->tlb[x].valid); } printf("--- [TLB] ---\n"); printf("\n");
-  //print TLB table//
+
   
   printf("--- printf: InsertToTLB(vpn=%i, phyPage=%i)\n", vpn, phyPage);
   
@@ -251,7 +252,7 @@ int lruAlgorithm(void)
   int phyPage;
   
   printf("--- printf: lruAlgorithm()\n");
-  //DEBUG('p', "--- DEBUG: lruAlgorithm()\n");
+
   
   phyPage = -1;
   
@@ -259,7 +260,7 @@ int lruAlgorithm(void)
   for(i = 0; i < NumPhysPages; i++) {
     if(!memoryTable[i].valid) {
       printf("--- printf: invalid page table found ipt=%i\n", i);
-      //DEBUG('p', "--- DEBUG: invalid page table found ipt=%d\n", i);
+
       
       phyPage = i;
       break;
@@ -268,30 +269,29 @@ int lruAlgorithm(void)
   
   if(phyPage < 0) {
     printf("--- printf: no invalid page table found, finding least recently used\n");
-    //DEBUG('p', "--- DEBUG: no invalid page table found, finding least recently used\n");
+ 
     
     phyPage = 0;
     int lastUsed = memoryTable[phyPage].lastUsed;
     
     printf("--- printf: first last used, memoryTable[0].lastUsed=%i\n", lastUsed);
-    //DEBUG('p', "--- DEBUG: first last used, memoryTable[0].lastUsed=%i\n", lastUsed);
+
     
     for(i = 0; i < NumPhysPages; i++) {
       printf("--- printf: memoryTable[%i].lastUsed=%i\n", i, memoryTable[i].lastUsed);
-      //DEBUG('p', "--- DEBUG: memoryTable[%i].lastUsed=%i\n", i, memoryTable[i].lastUsed);
+
       if(memoryTable[i].lastUsed < lastUsed) {
         lastUsed = memoryTable[i].lastUsed;
 		
         printf("--- printf: new last used found memoryTable[%i], new lastUsed=%i\n", i, lastUsed);
-        //DEBUG('p', "--- DEBUG: new last used found memoryTable[%i], new lastUsed=%i\n", i, lastUsed);
+
         phyPage = i;
       }
     }
   }
   
   printf("--- printf: lru ipt=%i\n", phyPage);
-  //DEBUG('p', "--- DEBUG: lru ipt=%d\n", phyPage);
-  
+
   return phyPage;
 }
 
