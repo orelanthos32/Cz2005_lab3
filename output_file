@@ -5,7 +5,7 @@ Scheduling interrupt handler the timer at time = 96
 	interrupts: on -> off
 Time: 10, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
 End of pending interrupts
 	interrupts: off -> on
@@ -18,13 +18,9 @@ Reading VA 0x0, size 4
 Exception: page fault/no TLB entry
 --- printf: VpnToPhyPage(vpn=0)
 --- printf: phyPage=-1
---- printf: lruAlgorithm()
---- printf: invalid page table found ipt=0
---- printf: lru ipt=0
-paging in: pid 0, phyPage 0, vpn 0
 
 --- [IPT] ---
-IPT[0]: pid=0, vpn=0, last used=0, valid=1
+IPT[0]: pid=0, vpn=0, last used=0, valid=0
 IPT[1]: pid=0, vpn=0, last used=0, valid=0
 IPT[2]: pid=0, vpn=0, last used=0, valid=0
 IPT[3]: pid=0, vpn=0, last used=0, valid=0
@@ -36,15 +32,19 @@ TLB[1]: vpn=0, phy=0, valid=0
 TLB[2]: vpn=0, phy=0, valid=0
 --- [TLB] ---
 
+--- printf: lruAlgorithm()
+--- printf: invalid page table found ipt=0
+--- printf: lru ipt=0
+paging in: pid 0, phyPage 0, vpn 0
 --- printf: InsertToTLB(vpn=0, phyPage=0)
 The corresponding TLBentry for Page 0 in TLB is 0 
 == Tick 11 ==
 	interrupts: on -> off
 Time: 11, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -57,9 +57,9 @@ At PC = 0x0: JAL 307
 	interrupts: on -> off
 Time: 12, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -72,9 +72,9 @@ At PC = 0x4: SLL r0,r0,0
 	interrupts: on -> off
 Time: 13, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -83,14 +83,10 @@ Reading VA 0x4cc, size 4
 Exception: page fault/no TLB entry
 --- printf: VpnToPhyPage(vpn=9)
 --- printf: phyPage=-1
---- printf: lruAlgorithm()
---- printf: invalid page table found ipt=1
---- printf: lru ipt=1
-paging in: pid 0, phyPage 1, vpn 9
 
 --- [IPT] ---
 IPT[0]: pid=0, vpn=0, last used=12, valid=1
-IPT[1]: pid=0, vpn=9, last used=0, valid=1
+IPT[1]: pid=0, vpn=0, last used=0, valid=0
 IPT[2]: pid=0, vpn=0, last used=0, valid=0
 IPT[3]: pid=0, vpn=0, last used=0, valid=0
 --- [IPT] ---
@@ -101,15 +97,19 @@ TLB[1]: vpn=0, phy=0, valid=0
 TLB[2]: vpn=0, phy=0, valid=0
 --- [TLB] ---
 
+--- printf: lruAlgorithm()
+--- printf: invalid page table found ipt=1
+--- printf: lru ipt=1
+paging in: pid 0, phyPage 1, vpn 9
 --- printf: InsertToTLB(vpn=9, phyPage=1)
 The corresponding TLBentry for Page 9 in TLB is 1 
 == Tick 14 ==
 	interrupts: on -> off
 Time: 14, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -122,9 +122,9 @@ At PC = 0x4cc: ADDIU r29,r29,-32
 	interrupts: on -> off
 Time: 15, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -137,15 +137,11 @@ Writing VA 0xd6c, size 4, value 0x8
 Exception: page fault/no TLB entry
 --- printf: VpnToPhyPage(vpn=26)
 --- printf: phyPage=-1
---- printf: lruAlgorithm()
---- printf: invalid page table found ipt=2
---- printf: lru ipt=2
-paging in: pid 0, phyPage 2, vpn 26
 
 --- [IPT] ---
 IPT[0]: pid=0, vpn=0, last used=12, valid=1
 IPT[1]: pid=0, vpn=9, last used=15, valid=1
-IPT[2]: pid=0, vpn=26, last used=0, valid=1
+IPT[2]: pid=0, vpn=0, last used=0, valid=0
 IPT[3]: pid=0, vpn=0, last used=0, valid=0
 --- [IPT] ---
 
@@ -155,15 +151,19 @@ TLB[1]: vpn=9, phy=1, valid=1
 TLB[2]: vpn=0, phy=0, valid=0
 --- [TLB] ---
 
+--- printf: lruAlgorithm()
+--- printf: invalid page table found ipt=2
+--- printf: lru ipt=2
+paging in: pid 0, phyPage 2, vpn 26
 --- printf: InsertToTLB(vpn=26, phyPage=2)
 The corresponding TLBentry for Page 26 in TLB is 2 
 == Tick 16 ==
 	interrupts: on -> off
 Time: 16, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -178,9 +178,9 @@ Writing VA 0xd6c, size 4, value 0x8
 	interrupts: on -> off
 Time: 17, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -195,9 +195,9 @@ Writing VA 0xd68, size 4, value 0x0
 	interrupts: on -> off
 Time: 18, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -210,9 +210,9 @@ At PC = 0x4d8: JAL 48
 	interrupts: on -> off
 Time: 19, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -225,9 +225,9 @@ At PC = 0x4dc: ADDU r30,r29,r0
 	interrupts: on -> off
 Time: 20, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -236,16 +236,12 @@ Reading VA 0xc0, size 4
 Exception: page fault/no TLB entry
 --- printf: VpnToPhyPage(vpn=1)
 --- printf: phyPage=-1
---- printf: lruAlgorithm()
---- printf: invalid page table found ipt=3
---- printf: lru ipt=3
-paging in: pid 0, phyPage 3, vpn 1
 
 --- [IPT] ---
 IPT[0]: pid=0, vpn=0, last used=12, valid=1
 IPT[1]: pid=0, vpn=9, last used=19, valid=1
 IPT[2]: pid=0, vpn=26, last used=17, valid=1
-IPT[3]: pid=0, vpn=1, last used=0, valid=1
+IPT[3]: pid=0, vpn=0, last used=0, valid=0
 --- [IPT] ---
 
 --- [TLB] ---
@@ -254,15 +250,19 @@ TLB[1]: vpn=9, phy=1, valid=1
 TLB[2]: vpn=26, phy=2, valid=1
 --- [TLB] ---
 
+--- printf: lruAlgorithm()
+--- printf: invalid page table found ipt=3
+--- printf: lru ipt=3
+paging in: pid 0, phyPage 3, vpn 1
 --- printf: InsertToTLB(vpn=1, phyPage=3)
 The corresponding TLBentry for Page 1 in TLB is 0 
 == Tick 21 ==
 	interrupts: on -> off
 Time: 21, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -275,9 +275,9 @@ At PC = 0xc0: JR r0,r31
 	interrupts: on -> off
 Time: 22, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -290,9 +290,9 @@ At PC = 0xc4: SLL r0,r0,0
 	interrupts: on -> off
 Time: 23, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -306,9 +306,9 @@ Executing: LUI r4,0
 	interrupts: on -> off
 Time: 24, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -321,9 +321,9 @@ At PC = 0x4e4: JAL 12
 	interrupts: on -> off
 Time: 25, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -336,9 +336,9 @@ At PC = 0x4e8: ADDIU r4,r4,1320
 	interrupts: on -> off
 Time: 26, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -368,9 +368,9 @@ The corresponding TLBentry for Page 0 in TLB is 1
 	interrupts: on -> off
 Time: 27, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -383,9 +383,9 @@ At PC = 0x30: ADDIU r2,r0,2
 	interrupts: on -> off
 Time: 28, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -398,6 +398,20 @@ SyscallExec(), initiated by user program main #0.
 	Translate 0x528, read: *** no valid TLB entry found for this virtual page 10!
 --- printf: VpnToPhyPage(vpn=10)
 --- printf: phyPage=-1
+
+--- [IPT] ---
+IPT[0]: pid=0, vpn=0, last used=28, valid=1
+IPT[1]: pid=0, vpn=9, last used=25, valid=1
+IPT[2]: pid=0, vpn=26, last used=17, valid=1
+IPT[3]: pid=0, vpn=1, last used=22, valid=1
+--- [IPT] ---
+
+--- [TLB] ---
+TLB[0]: vpn=1, phy=3, valid=1
+TLB[1]: vpn=0, phy=0, valid=1
+TLB[2]: vpn=26, phy=2, valid=1
+--- [TLB] ---
+
 --- printf: lruAlgorithm()
 --- printf: no invalid page table found, finding least recently used
 --- printf: first last used, memoryTable[0].lastUsed=28
@@ -410,20 +424,6 @@ SyscallExec(), initiated by user program main #0.
 --- printf: lru ipt=2
 paging out: pid 0, phyPage 2, vpn 26
 paging in: pid 0, phyPage 2, vpn 10
-
---- [IPT] ---
-IPT[0]: pid=0, vpn=0, last used=28, valid=1
-IPT[1]: pid=0, vpn=9, last used=25, valid=1
-IPT[2]: pid=0, vpn=10, last used=0, valid=1
-IPT[3]: pid=0, vpn=1, last used=22, valid=1
---- [IPT] ---
-
---- [TLB] ---
-TLB[0]: vpn=1, phy=3, valid=1
-TLB[1]: vpn=0, phy=0, valid=1
-TLB[2]: vpn=26, phy=2, valid=0
---- [TLB] ---
-
 --- printf: InsertToTLB(vpn=10, phyPage=2)
 The corresponding TLBentry for Page 10 in TLB is 2 	Translate 0x528, read: phys addr = 0x128
 	Translate 0x529, read: phys addr = 0x129
@@ -458,7 +458,7 @@ The corresponding TLBentry for Page 10 in TLB is 2 	Translate 0x528, read: phys 
 	Translate 0x536, read: phys addr = 0x136
 	Translate 0x537, read: phys addr = 0x137
 Initializing address space, num pages 27, size 3456
-Forking thread userprogram #1 with func=0x804d2cf, arg=150710096, join=NO
+Forking thread userprogram #1 with func=0x804d2cf, arg=136275792, join=NO
 	interrupts: on -> off
 Putting thread userprogram #1 on ready list.
 	interrupts: off -> on
@@ -467,9 +467,9 @@ Putting thread userprogram #1 on ready list.
 	interrupts: on -> off
 Time: 38, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -478,9 +478,9 @@ End of pending interrupts
 	interrupts: on -> off
 Time: 39, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -493,9 +493,9 @@ At PC = 0x38: JR r0,r31
 	interrupts: on -> off
 Time: 40, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -508,9 +508,9 @@ At PC = 0x3c: SLL r0,r0,0
 	interrupts: on -> off
 Time: 41, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -540,9 +540,9 @@ The corresponding TLBentry for Page 9 in TLB is 0
 	interrupts: on -> off
 Time: 42, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -555,6 +555,20 @@ Writing VA 0xd60, size 4, value 0x1
 Exception: page fault/no TLB entry
 --- printf: VpnToPhyPage(vpn=26)
 --- printf: phyPage=-1
+
+--- [IPT] ---
+IPT[0]: pid=0, vpn=0, last used=40, valid=1
+IPT[1]: pid=0, vpn=9, last used=42, valid=1
+IPT[2]: pid=0, vpn=10, last used=28, valid=1
+IPT[3]: pid=0, vpn=1, last used=22, valid=1
+--- [IPT] ---
+
+--- [TLB] ---
+TLB[0]: vpn=9, phy=1, valid=1
+TLB[1]: vpn=0, phy=0, valid=1
+TLB[2]: vpn=10, phy=2, valid=1
+--- [TLB] ---
+
 --- printf: lruAlgorithm()
 --- printf: no invalid page table found, finding least recently used
 --- printf: first last used, memoryTable[0].lastUsed=40
@@ -566,29 +580,15 @@ Exception: page fault/no TLB entry
 --- printf: new last used found memoryTable[3], new lastUsed=22
 --- printf: lru ipt=3
 paging in: pid 0, phyPage 3, vpn 26
-
---- [IPT] ---
-IPT[0]: pid=0, vpn=0, last used=40, valid=1
-IPT[1]: pid=0, vpn=9, last used=42, valid=1
-IPT[2]: pid=0, vpn=10, last used=28, valid=1
-IPT[3]: pid=0, vpn=26, last used=0, valid=1
---- [IPT] ---
-
---- [TLB] ---
-TLB[0]: vpn=9, phy=1, valid=1
-TLB[1]: vpn=0, phy=0, valid=1
-TLB[2]: vpn=10, phy=2, valid=1
---- [TLB] ---
-
 --- printf: InsertToTLB(vpn=26, phyPage=3)
 The corresponding TLBentry for Page 26 in TLB is 1 
 == Tick 43 ==
 	interrupts: on -> off
 Time: 43, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -603,9 +603,9 @@ Writing VA 0xd60, size 4, value 0x1
 	interrupts: on -> off
 Time: 44, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -621,9 +621,9 @@ Reading VA 0xd60, size 4
 	interrupts: on -> off
 Time: 45, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -636,9 +636,9 @@ At PC = 0x4f4: JAL 16
 	interrupts: on -> off
 Time: 46, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -651,9 +651,9 @@ At PC = 0x4f8: SLL r0,r0,0
 	interrupts: on -> off
 Time: 47, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -683,9 +683,9 @@ The corresponding TLBentry for Page 0 in TLB is 2
 	interrupts: on -> off
 Time: 48, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -698,9 +698,9 @@ At PC = 0x40: ADDIU r2,r0,3
 	interrupts: on -> off
 Time: 49, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -719,9 +719,9 @@ Switching from thread main #0 to thread userprogram #1
 	interrupts: on -> off
 Time: 59, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -732,6 +732,20 @@ Reading VA 0x0, size 4
 Exception: page fault/no TLB entry
 --- printf: VpnToPhyPage(vpn=0)
 --- printf: phyPage=-1
+
+--- [IPT] ---
+IPT[0]: pid=0, vpn=0, last used=49, valid=1
+IPT[1]: pid=0, vpn=9, last used=46, valid=1
+IPT[2]: pid=0, vpn=10, last used=28, valid=1
+IPT[3]: pid=0, vpn=26, last used=44, valid=1
+--- [IPT] ---
+
+--- [TLB] ---
+TLB[0]: vpn=9, phy=1, valid=0
+TLB[1]: vpn=26, phy=3, valid=0
+TLB[2]: vpn=0, phy=0, valid=0
+--- [TLB] ---
+
 --- printf: lruAlgorithm()
 --- printf: no invalid page table found, finding least recently used
 --- printf: first last used, memoryTable[0].lastUsed=49
@@ -743,29 +757,15 @@ Exception: page fault/no TLB entry
 --- printf: memoryTable[3].lastUsed=44
 --- printf: lru ipt=2
 paging in: pid 1, phyPage 2, vpn 0
-
---- [IPT] ---
-IPT[0]: pid=0, vpn=0, last used=49, valid=1
-IPT[1]: pid=0, vpn=9, last used=46, valid=1
-IPT[2]: pid=1, vpn=0, last used=0, valid=1
-IPT[3]: pid=0, vpn=26, last used=44, valid=1
---- [IPT] ---
-
---- [TLB] ---
-TLB[0]: vpn=9, phy=1, valid=0
-TLB[1]: vpn=26, phy=3, valid=0
-TLB[2]: vpn=0, phy=0, valid=0
---- [TLB] ---
-
 --- printf: InsertToTLB(vpn=0, phyPage=2)
 The corresponding TLBentry for Page 0 in TLB is 0 
 == Tick 60 ==
 	interrupts: on -> off
 Time: 60, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -778,9 +778,9 @@ At PC = 0x0: JAL 307
 	interrupts: on -> off
 Time: 61, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -793,9 +793,9 @@ At PC = 0x4: SLL r0,r0,0
 	interrupts: on -> off
 Time: 62, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -804,6 +804,20 @@ Reading VA 0x4cc, size 4
 Exception: page fault/no TLB entry
 --- printf: VpnToPhyPage(vpn=9)
 --- printf: phyPage=-1
+
+--- [IPT] ---
+IPT[0]: pid=0, vpn=0, last used=49, valid=1
+IPT[1]: pid=0, vpn=9, last used=46, valid=1
+IPT[2]: pid=1, vpn=0, last used=61, valid=1
+IPT[3]: pid=0, vpn=26, last used=44, valid=1
+--- [IPT] ---
+
+--- [TLB] ---
+TLB[0]: vpn=0, phy=2, valid=1
+TLB[1]: vpn=26, phy=3, valid=0
+TLB[2]: vpn=0, phy=0, valid=0
+--- [TLB] ---
+
 --- printf: lruAlgorithm()
 --- printf: no invalid page table found, finding least recently used
 --- printf: first last used, memoryTable[0].lastUsed=49
@@ -816,29 +830,15 @@ Exception: page fault/no TLB entry
 --- printf: lru ipt=3
 paging out: pid 0, phyPage 3, vpn 26
 paging in: pid 1, phyPage 3, vpn 9
-
---- [IPT] ---
-IPT[0]: pid=0, vpn=0, last used=49, valid=1
-IPT[1]: pid=0, vpn=9, last used=46, valid=1
-IPT[2]: pid=1, vpn=0, last used=61, valid=1
-IPT[3]: pid=1, vpn=9, last used=0, valid=1
---- [IPT] ---
-
---- [TLB] ---
-TLB[0]: vpn=0, phy=2, valid=1
-TLB[1]: vpn=26, phy=3, valid=0
-TLB[2]: vpn=0, phy=0, valid=0
---- [TLB] ---
-
 --- printf: InsertToTLB(vpn=9, phyPage=3)
 The corresponding TLBentry for Page 9 in TLB is 1 
 == Tick 63 ==
 	interrupts: on -> off
 Time: 63, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -851,9 +851,9 @@ At PC = 0x4cc: ADDIU r29,r29,-24
 	interrupts: on -> off
 Time: 64, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -866,20 +866,10 @@ Writing VA 0xd6c, size 4, value 0x8
 Exception: page fault/no TLB entry
 --- printf: VpnToPhyPage(vpn=26)
 --- printf: phyPage=-1
---- printf: lruAlgorithm()
---- printf: no invalid page table found, finding least recently used
---- printf: first last used, memoryTable[0].lastUsed=49
---- printf: memoryTable[0].lastUsed=49
---- printf: memoryTable[1].lastUsed=46
---- printf: new last used found memoryTable[1], new lastUsed=46
---- printf: memoryTable[2].lastUsed=61
---- printf: memoryTable[3].lastUsed=64
---- printf: lru ipt=1
-paging in: pid 1, phyPage 1, vpn 26
 
 --- [IPT] ---
 IPT[0]: pid=0, vpn=0, last used=49, valid=1
-IPT[1]: pid=1, vpn=26, last used=0, valid=1
+IPT[1]: pid=0, vpn=9, last used=46, valid=1
 IPT[2]: pid=1, vpn=0, last used=61, valid=1
 IPT[3]: pid=1, vpn=9, last used=64, valid=1
 --- [IPT] ---
@@ -890,15 +880,25 @@ TLB[1]: vpn=9, phy=3, valid=1
 TLB[2]: vpn=0, phy=0, valid=0
 --- [TLB] ---
 
+--- printf: lruAlgorithm()
+--- printf: no invalid page table found, finding least recently used
+--- printf: first last used, memoryTable[0].lastUsed=49
+--- printf: memoryTable[0].lastUsed=49
+--- printf: memoryTable[1].lastUsed=46
+--- printf: new last used found memoryTable[1], new lastUsed=46
+--- printf: memoryTable[2].lastUsed=61
+--- printf: memoryTable[3].lastUsed=64
+--- printf: lru ipt=1
+paging in: pid 1, phyPage 1, vpn 26
 --- printf: InsertToTLB(vpn=26, phyPage=1)
 The corresponding TLBentry for Page 26 in TLB is 2 
 == Tick 65 ==
 	interrupts: on -> off
 Time: 65, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -913,9 +913,9 @@ Writing VA 0xd6c, size 4, value 0x8
 	interrupts: on -> off
 Time: 66, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -930,9 +930,9 @@ Writing VA 0xd68, size 4, value 0x0
 	interrupts: on -> off
 Time: 67, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -945,9 +945,9 @@ At PC = 0x4d8: JAL 48
 	interrupts: on -> off
 Time: 68, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -960,9 +960,9 @@ At PC = 0x4dc: ADDU r30,r29,r0
 	interrupts: on -> off
 Time: 69, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -971,18 +971,9 @@ Reading VA 0xc0, size 4
 Exception: page fault/no TLB entry
 --- printf: VpnToPhyPage(vpn=1)
 --- printf: phyPage=-1
---- printf: lruAlgorithm()
---- printf: no invalid page table found, finding least recently used
---- printf: first last used, memoryTable[0].lastUsed=49
---- printf: memoryTable[0].lastUsed=49
---- printf: memoryTable[1].lastUsed=66
---- printf: memoryTable[2].lastUsed=61
---- printf: memoryTable[3].lastUsed=68
---- printf: lru ipt=0
-paging in: pid 1, phyPage 0, vpn 1
 
 --- [IPT] ---
-IPT[0]: pid=1, vpn=1, last used=0, valid=1
+IPT[0]: pid=0, vpn=0, last used=49, valid=1
 IPT[1]: pid=1, vpn=26, last used=66, valid=1
 IPT[2]: pid=1, vpn=0, last used=61, valid=1
 IPT[3]: pid=1, vpn=9, last used=68, valid=1
@@ -994,15 +985,24 @@ TLB[1]: vpn=9, phy=3, valid=1
 TLB[2]: vpn=26, phy=1, valid=1
 --- [TLB] ---
 
+--- printf: lruAlgorithm()
+--- printf: no invalid page table found, finding least recently used
+--- printf: first last used, memoryTable[0].lastUsed=49
+--- printf: memoryTable[0].lastUsed=49
+--- printf: memoryTable[1].lastUsed=66
+--- printf: memoryTable[2].lastUsed=61
+--- printf: memoryTable[3].lastUsed=68
+--- printf: lru ipt=0
+paging in: pid 1, phyPage 0, vpn 1
 --- printf: InsertToTLB(vpn=1, phyPage=0)
 The corresponding TLBentry for Page 1 in TLB is 0 
 == Tick 70 ==
 	interrupts: on -> off
 Time: 70, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -1015,9 +1015,9 @@ At PC = 0xc0: JR r0,r31
 	interrupts: on -> off
 Time: 71, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -1030,9 +1030,9 @@ At PC = 0xc4: SLL r0,r0,0
 	interrupts: on -> off
 Time: 72, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -1045,9 +1045,9 @@ At PC = 0x4e0: JAL 8
 	interrupts: on -> off
 Time: 73, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -1060,9 +1060,9 @@ At PC = 0x4e4: ADDU r4,r0,r0
 	interrupts: on -> off
 Time: 74, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -1092,9 +1092,9 @@ The corresponding TLBentry for Page 0 in TLB is 1
 	interrupts: on -> off
 Time: 75, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -1107,9 +1107,9 @@ At PC = 0x20: ADDIU r2,r0,1
 	interrupts: on -> off
 Time: 76, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -1128,9 +1128,9 @@ thread userprogram releases semaphore done
 	interrupts: on -> off
 Time: 86, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -1147,18 +1147,18 @@ thread main acquires semaphore done
 	interrupts: on -> off
 Time: 96, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 96
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 Invoking interrupt handler for the timer at time 96
 Scheduling interrupt handler the timer at time = 105
 Time: 96, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba728)
+In mapcar, about to invoke 804b454(81f6728)
 Interrupt handler timer, scheduled at 105
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 	interrupts: off -> on
@@ -1170,18 +1170,18 @@ Yielding thread main #0
 	interrupts: on -> off
 Time: 106, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba728)
+In mapcar, about to invoke 804b454(81f6728)
 Interrupt handler timer, scheduled at 105
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
 End of pending interrupts
 Invoking interrupt handler for the timer at time 105
 Scheduling interrupt handler the timer at time = 185
 Time: 106, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 185
 End of pending interrupts
 	interrupts: off -> on
@@ -1193,18 +1193,18 @@ Yielding thread main #0
 	interrupts: on -> off
 Time: 116, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba580)
+In mapcar, about to invoke 804b454(81f6580)
 Interrupt handler console read, scheduled at 110
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 185
 End of pending interrupts
 Invoking interrupt handler for the console read at time 110
 Scheduling interrupt handler the console read at time = 216
 Time: 116, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 185
-In mapcar, about to invoke 804b454(8fba728)
+In mapcar, about to invoke 804b454(81f6728)
 Interrupt handler console read, scheduled at 216
 End of pending interrupts
 	interrupts: off -> on
@@ -1213,9 +1213,9 @@ End of pending interrupts
 	interrupts: on -> off
 Time: 117, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 185
-In mapcar, about to invoke 804b454(8fba728)
+In mapcar, about to invoke 804b454(81f6728)
 Interrupt handler console read, scheduled at 216
 End of pending interrupts
 	interrupts: off -> on
@@ -1224,13 +1224,9 @@ Reading VA 0x48, size 4
 Exception: page fault/no TLB entry
 --- printf: VpnToPhyPage(vpn=0)
 --- printf: phyPage=-1
---- printf: lruAlgorithm()
---- printf: invalid page table found ipt=0
---- printf: lru ipt=0
-paging in: pid 0, phyPage 0, vpn 0
 
 --- [IPT] ---
-IPT[0]: pid=0, vpn=0, last used=0, valid=1
+IPT[0]: pid=1, vpn=1, last used=71, valid=0
 IPT[1]: pid=1, vpn=26, last used=66, valid=0
 IPT[2]: pid=1, vpn=0, last used=76, valid=0
 IPT[3]: pid=1, vpn=9, last used=73, valid=0
@@ -1242,15 +1238,19 @@ TLB[1]: vpn=0, phy=2, valid=0
 TLB[2]: vpn=26, phy=1, valid=0
 --- [TLB] ---
 
+--- printf: lruAlgorithm()
+--- printf: invalid page table found ipt=0
+--- printf: lru ipt=0
+paging in: pid 0, phyPage 0, vpn 0
 --- printf: InsertToTLB(vpn=0, phyPage=0)
 The corresponding TLBentry for Page 0 in TLB is 0 
 == Tick 118 ==
 	interrupts: on -> off
 Time: 118, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 185
-In mapcar, about to invoke 804b454(8fba728)
+In mapcar, about to invoke 804b454(81f6728)
 Interrupt handler console read, scheduled at 216
 End of pending interrupts
 	interrupts: off -> on
@@ -1263,9 +1263,9 @@ At PC = 0x48: JR r0,r31
 	interrupts: on -> off
 Time: 119, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 185
-In mapcar, about to invoke 804b454(8fba728)
+In mapcar, about to invoke 804b454(81f6728)
 Interrupt handler console read, scheduled at 216
 End of pending interrupts
 	interrupts: off -> on
@@ -1278,9 +1278,9 @@ At PC = 0x4c: SLL r0,r0,0
 	interrupts: on -> off
 Time: 120, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 185
-In mapcar, about to invoke 804b454(8fba728)
+In mapcar, about to invoke 804b454(81f6728)
 Interrupt handler console read, scheduled at 216
 End of pending interrupts
 	interrupts: off -> on
@@ -1289,14 +1289,10 @@ Reading VA 0x4fc, size 4
 Exception: page fault/no TLB entry
 --- printf: VpnToPhyPage(vpn=9)
 --- printf: phyPage=-1
---- printf: lruAlgorithm()
---- printf: invalid page table found ipt=1
---- printf: lru ipt=1
-paging in: pid 0, phyPage 1, vpn 9
 
 --- [IPT] ---
 IPT[0]: pid=0, vpn=0, last used=119, valid=1
-IPT[1]: pid=0, vpn=9, last used=0, valid=1
+IPT[1]: pid=1, vpn=26, last used=66, valid=0
 IPT[2]: pid=1, vpn=0, last used=76, valid=0
 IPT[3]: pid=1, vpn=9, last used=73, valid=0
 --- [IPT] ---
@@ -1307,15 +1303,19 @@ TLB[1]: vpn=0, phy=2, valid=0
 TLB[2]: vpn=26, phy=1, valid=0
 --- [TLB] ---
 
+--- printf: lruAlgorithm()
+--- printf: invalid page table found ipt=1
+--- printf: lru ipt=1
+paging in: pid 0, phyPage 1, vpn 9
 --- printf: InsertToTLB(vpn=9, phyPage=1)
 The corresponding TLBentry for Page 9 in TLB is 1 
 == Tick 121 ==
 	interrupts: on -> off
 Time: 121, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 185
-In mapcar, about to invoke 804b454(8fba728)
+In mapcar, about to invoke 804b454(81f6728)
 Interrupt handler console read, scheduled at 216
 End of pending interrupts
 	interrupts: off -> on
@@ -1328,9 +1328,9 @@ At PC = 0x4fc: JAL 4
 	interrupts: on -> off
 Time: 122, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 185
-In mapcar, about to invoke 804b454(8fba728)
+In mapcar, about to invoke 804b454(81f6728)
 Interrupt handler console read, scheduled at 216
 End of pending interrupts
 	interrupts: off -> on
@@ -1339,15 +1339,11 @@ Reading VA 0x500, size 4
 Exception: page fault/no TLB entry
 --- printf: VpnToPhyPage(vpn=10)
 --- printf: phyPage=-1
---- printf: lruAlgorithm()
---- printf: invalid page table found ipt=2
---- printf: lru ipt=2
-paging in: pid 0, phyPage 2, vpn 10
 
 --- [IPT] ---
 IPT[0]: pid=0, vpn=0, last used=119, valid=1
 IPT[1]: pid=0, vpn=9, last used=121, valid=1
-IPT[2]: pid=0, vpn=10, last used=0, valid=1
+IPT[2]: pid=1, vpn=0, last used=76, valid=0
 IPT[3]: pid=1, vpn=9, last used=73, valid=0
 --- [IPT] ---
 
@@ -1357,15 +1353,19 @@ TLB[1]: vpn=9, phy=1, valid=1
 TLB[2]: vpn=26, phy=1, valid=0
 --- [TLB] ---
 
+--- printf: lruAlgorithm()
+--- printf: invalid page table found ipt=2
+--- printf: lru ipt=2
+paging in: pid 0, phyPage 2, vpn 10
 --- printf: InsertToTLB(vpn=10, phyPage=2)
 The corresponding TLBentry for Page 10 in TLB is 2 
 == Tick 123 ==
 	interrupts: on -> off
 Time: 123, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 185
-In mapcar, about to invoke 804b454(8fba728)
+In mapcar, about to invoke 804b454(81f6728)
 Interrupt handler console read, scheduled at 216
 End of pending interrupts
 	interrupts: off -> on
@@ -1378,16 +1378,12 @@ Writing VA 0xd64, size 4, value 0x0
 Exception: page fault/no TLB entry
 --- printf: VpnToPhyPage(vpn=26)
 --- printf: phyPage=-1
---- printf: lruAlgorithm()
---- printf: invalid page table found ipt=3
---- printf: lru ipt=3
-paging in: pid 0, phyPage 3, vpn 26
 
 --- [IPT] ---
 IPT[0]: pid=0, vpn=0, last used=119, valid=1
 IPT[1]: pid=0, vpn=9, last used=121, valid=1
 IPT[2]: pid=0, vpn=10, last used=123, valid=1
-IPT[3]: pid=0, vpn=26, last used=0, valid=1
+IPT[3]: pid=1, vpn=9, last used=73, valid=0
 --- [IPT] ---
 
 --- [TLB] ---
@@ -1396,15 +1392,19 @@ TLB[1]: vpn=9, phy=1, valid=1
 TLB[2]: vpn=10, phy=2, valid=1
 --- [TLB] ---
 
+--- printf: lruAlgorithm()
+--- printf: invalid page table found ipt=3
+--- printf: lru ipt=3
+paging in: pid 0, phyPage 3, vpn 26
 --- printf: InsertToTLB(vpn=26, phyPage=3)
 The corresponding TLBentry for Page 26 in TLB is 0 
 == Tick 124 ==
 	interrupts: on -> off
 Time: 124, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 185
-In mapcar, about to invoke 804b454(8fba728)
+In mapcar, about to invoke 804b454(81f6728)
 Interrupt handler console read, scheduled at 216
 End of pending interrupts
 	interrupts: off -> on
@@ -1419,9 +1419,9 @@ Writing VA 0xd64, size 4, value 0x0
 	interrupts: on -> off
 Time: 125, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 185
-In mapcar, about to invoke 804b454(8fba728)
+In mapcar, about to invoke 804b454(81f6728)
 Interrupt handler console read, scheduled at 216
 End of pending interrupts
 	interrupts: off -> on
@@ -1451,9 +1451,9 @@ The corresponding TLBentry for Page 0 in TLB is 1
 	interrupts: on -> off
 Time: 126, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 185
-In mapcar, about to invoke 804b454(8fba728)
+In mapcar, about to invoke 804b454(81f6728)
 Interrupt handler console read, scheduled at 216
 End of pending interrupts
 	interrupts: off -> on
@@ -1466,9 +1466,9 @@ At PC = 0x10: ADDIU r2,r0,0
 	interrupts: on -> off
 Time: 127, interrupts off
 Pending interrupts:
-In mapcar, about to invoke 804b454(8fba098)
+In mapcar, about to invoke 804b454(81f6098)
 Interrupt handler timer, scheduled at 185
-In mapcar, about to invoke 804b454(8fba728)
+In mapcar, about to invoke 804b454(81f6728)
 Interrupt handler console read, scheduled at 216
 End of pending interrupts
 	interrupts: off -> on
